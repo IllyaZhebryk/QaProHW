@@ -4,18 +4,18 @@ var pc = {
 "Миття голови": "60 грн",
 price(){
     let sum = 0;
-    for (const key in pc) {
-    if(!isNaN(parseInt(pc[key]))) {
-        sum += parseInt(pc[key]);                        
+    for (const key in this) {
+    if(!isNaN(parseInt(this[key]))) {
+        sum += parseInt(this[key]);                        
         }
     }return sum;
 },
 minPrice(){
-    let min = parseInt(pc["стрижка"]);/* Марічко, я не зміг знайти, як в об'єкті отримати 
+    let min = parseInt(this["стрижка"]);/* Марічко, я не зміг знайти, як в об'єкті отримати 
     значення саме першого ключа. Тому я припустив, шо яжпрограміст і знаю, яка властивість йде першою.*/
-    for (const key in pc) {
-    if(!isNaN(parseInt(pc[key]))) {
-        let a = parseInt(pc[key]);
+    for (const key in this) {
+    if(!isNaN(parseInt(this[key]))) {
+        let a = parseInt(this[key]);
          if (a < min) {
             min = a;                       
         }}
@@ -23,9 +23,9 @@ minPrice(){
 },
 maxPrice(){
     let max = 0 ;
-    for (const key in pc) {
-        if(!isNaN(parseInt(pc[key]))) {
-        let a = parseInt(pc[key]);
+    for (const key in this) {
+        if(!isNaN(parseInt(this[key]))) {
+        let a = parseInt(this[key]);
         if (a > max) {
             max = a;            
         }}
